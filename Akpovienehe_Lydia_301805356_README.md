@@ -7,7 +7,7 @@ Student ID: 301805356
 
 ## Case study
 
-To be selected in the next step.
+Hospital Management System
 
 ## Portfolio folders
 
