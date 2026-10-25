@@ -20,7 +20,12 @@ The five entities support patient registration, staff management, appointment sc
 
 | Attribute | PostgreSQL type | Constraint |
 |---|---|---|
-| patient_id | INTEGER | PK, required |
+| SELECT 'staffRole' AS table_name, count(*) AS row_count FROM public.staffRole
+UNION ALL SELECT 'patient_id', count(*) FROM public.patient
+UNION ALL SELECT 'staff_id', count(*) FROM public.staff
+UNION ALL SELECT 'appointment_id', count(*) FROM public.appointment
+UNION ALL SELECT 'consultation_id', count(*) FROM public.consultation
+ | INTEGER | PK, required |
 | first_name | VARCHAR(50) | Required |
 | last_name | VARCHAR(50) | Required |
 | phone | VARCHAR(20) | Required |
