@@ -2,9 +2,9 @@
 -- Fictional hospital records for PostgreSQL 16.
 -- Run after creating the schema. IDs are looked up by unique values.
 
+
+
 BEGIN;
-
-
 
 -- Add the allowed staff roles.
 INSERT INTO public.staffRole (role_name)
@@ -76,3 +76,11 @@ VALUES
      DATE '2026-11-03');
 
 COMMIT;
+
+SELECT 'staffRole' AS table_name, count(*) AS row_count FROM public.staffRole
+UNION ALL SELECT 'Patient', count(*) FROM public."Patient"
+UNION ALL SELECT 'Staff', count(*) FROM public."Staff"
+UNION ALL SELECT 'Appointment', count(*) FROM public."Appointment"
+UNION ALL SELECT 'Consultation', count(*) FROM public."Consultation";
+
+
